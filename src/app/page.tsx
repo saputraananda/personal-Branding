@@ -1,103 +1,76 @@
-import Image from "next/image";
+'use client';
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
+    <main className="min-h-screen bg-white text-gray-900 px-6 py-10 max-w-3xl mx-auto font-sans">
+      {/* Header */}
+      <header className="text-center border-b pb-6 mb-8">
+        <img
+          src="/putra.png"
+          alt="Putra's Profile"
+          className="w-28 h-28 rounded-full mx-auto mb-4 border"
         />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+        <h1 className="text-3xl font-bold">Putra Saputra</h1>
+        <p className="text-gray-600">Web Developer | Frontend Engineer | UI/UX Enthusiast</p>
+        <div className="mt-4 text-sm text-gray-700 space-x-4">
+          <a href="mailto:putra@email.com" className="hover:underline">putra@email.com</a>
+          <a href="https://github.com/putrausername" target="_blank" className="hover:underline">GitHub</a>
+          <a href="https://linkedin.com/in/putrausername" target="_blank" className="hover:underline">LinkedIn</a>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
+      </header>
+
+      {/* Summary */}
+      <section className="mb-8">
+        <h2 className="text-xl font-semibold mb-2 border-b pb-1">Professional Summary</h2>
+        <p className="text-gray-800 text-justify">
+          Seorang Web Developer dengan pengalaman membangun aplikasi front-end modern menggunakan React dan Next.js. Memiliki ketertarikan kuat pada performa web, pengalaman pengguna, dan desain sistem UI yang skalabel. Terbiasa bekerja dengan tim, cepat beradaptasi, dan terbuka terhadap teknologi baru.
+        </p>
+      </section>
+
+      {/* Skills */}
+      <section className="mb-8">
+        <h2 className="text-xl font-semibold mb-2 border-b pb-1">Technical Skills</h2>
+        <ul className="grid grid-cols-2 gap-x-4 gap-y-2 text-gray-800 text-sm">
+          <li>JavaScript / TypeScript</li>
+          <li>React / Next.js</li>
+          <li>HTML / CSS / Tailwind</li>
+          <li>Node.js / Express</li>
+          <li>Git & GitHub</li>
+          <li>REST API / JSON</li>
+        </ul>
+      </section>
+
+      {/* Experience */}
+      <section className="mb-8">
+        <h2 className="text-xl font-semibold mb-2 border-b pb-1">Experience</h2>
+        <div className="mb-4">
+          <p className="font-semibold text-gray-900">Frontend Developer – PT Teknologi Digital | 2023 - Present</p>
+          <ul className="list-disc list-inside text-sm text-gray-800 mt-1">
+            <li>Membangun dan memelihara antarmuka pengguna menggunakan React dan Tailwind.</li>
+            <li>Berkoordinasi dengan tim backend dalam mengkonsumsi REST API.</li>
+            <li>Meningkatkan performa web hingga 40% melalui optimasi code-splitting.</li>
+          </ul>
+        </div>
+      </section>
+
+      {/* Education */}
+      <section className="mb-8">
+        <h2 className="text-xl font-semibold mb-2 border-b pb-1">Education</h2>
+        <p className="text-sm text-gray-800">
+          S1 Teknik Informatika – Universitas XYZ, 2019 - 2023
+        </p>
+      </section>
+
+      {/* Download CV */}
+      <section className="text-center mt-10">
         <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="/PutraCV.pdf"
+          download
+          className="inline-block px-6 py-3 bg-black text-white rounded hover:bg-gray-800 transition"
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
+          Download Full CV (PDF)
         </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </section>
+    </main>
   );
 }
